@@ -1,5 +1,8 @@
 import queue
+from timeit import default_timer as timer
 import threading
+
+start = timer()
 
 def user_input():
     while True:
@@ -33,5 +36,10 @@ if __name__ == "__main__":
     input_thread.join()
     result_queue.put(None)  #  thread to exit
     calc_thread.join()
+
+stop = timer()
+
+timer = f"Time: {stop-start} s}
+print(timer)
 
 #                               Taombawkry                  '''   9  '''
